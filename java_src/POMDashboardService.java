@@ -21,159 +21,132 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 @Path("/POMDashboardServices")
-public class CTPOMDashboardServices
-{
-    public static String cxdHostName;
-    public static CTLog4j log= new CTLog4j("CTPOMDashboardServices");
-    private String remoteHostName="";
-    private HttpSession session;
-    private String userName=null;
+public class CTPOMDashboardServices {
+  public static String cxdHostName;
+  public static CTLog4j log = new CTLog4j("CTPOMDashboardServices");
+  private String remoteHostName = "";
+  private HttpSession session;
+  private String userName = null;
 
-    public CTPOMDashboardServices(@Context HttpServletRequest req)
-    {
-        cxdHostName = "localhost";
-        try
-        {
-            session = req.getSession();
-            String hostName = req.getSession().getServletContext().getInitParameter("CheetahXDHostName");
-            userName=(String) req.getSession().getAttribute("userName");
+  public CTPOMDashboardServices(@Context HttpServletRequest req) {
+    cxdHostName = "localhost";
+    try {
+      session = req.getSession();
+      String hostName = req.getSession().getServletContext().getInitParameter("CheetahXDHostName");
+      userName = (String) req.getSession().getAttribute("userName");
 
-           if (hostName != null)
-           {
-              cxdHostName = hostName;
-              CTRMIAPIUtil.setRMIHostName(cxdHostName);
-           }
-           remoteHostName = req.getRemoteHost();
+      if (hostName != null) {
+        cxdHostName = hostName;
+        CTRMIAPIUtil.setRMIHostName(cxdHostName);
+      }
+      remoteHostName = req.getRemoteHost();
 
-        }
-        catch (Exception e)
-        {
-        }
-
-        if (cxdHostName.equals("localhost"))
-        {
-            try
-            {
-               cxdHostName = InetAddress.getLocalHost().getHostName();
-            }
-            catch (Exception e)
-            {
-                log.logVerbose("CTPOMDashboardServices: exception getting local hostname: "+e.toString());
-            }
-        }
+    } catch (Exception e) {
     }
 
-    public CTPOMDashboardServices()
-    {
-        cxdHostName = "localhost";
-        try
-        {
-           cxdHostName = InetAddress.getLocalHost().getHostName();
-        }
-        catch (Exception e)
-        {
-            log.logVerbose("CTPOMDashboardServices: exception getting local hostname: "+e.toString());
-
-        }
-        remoteHostName = cxdHostName;
+    if (cxdHostName.equals("localhost")) {
+      try {
+        cxdHostName = InetAddress.getLocalHost().getHostName();
+      } catch (Exception e) {
+        log.logVerbose("CTPOMDashboardServices: exception getting local hostname: " + e.toString());
+      }
     }
-    @GET
-    @Path("GetLastConfig")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getLastConfig() throws RemoteException, Exception
-    {
-        CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, null, null, null, log, userName);
-        JSONObject responseObject = new JSONObject();
-        responseObject.put("data", rt.getLastConfig());
+  }
 
-        log.logDebug("GetLastConfig: Sending response: "+responseObject.toString());
+  public CTPOMDashboardServices() {
+    cxdHostName = "localhost";
+    try {
+      cxdHostName = InetAddress.getLocalHost().getHostName();
+    } catch (Exception e) {
+      log.logVerbose("CTPOMDashboardServices: exception getting local hostname: " + e.toString());
 
-        return Response.ok(responseObject.toString()).build();
     }
+    remoteHostName = cxdHostName;
+  }
 
-     @GET
-     @Path("GetRegionsAreasHubs")
-     @Produces(MediaType.APPLICATION_JSON)
-     public Response getRegionsAreasHubs() throws RemoteException, Exception
-     {
-         CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, null, null, null, log, userName);
-         JSONObject responseObject = new JSONObject();
-         responseObject.put("data", rt.getRegionsAreasHubs());
+  @GET
+  @Path("GetLastConfig")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getLastConfig() throws RemoteException, Exception {
+    CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, null, null, null, log, userName);
+    JSONObject responseObject = new JSONObject();
+    responseObject.put("data", rt.getLastConfig());
 
-         log.logDebug("GetRegionsAreasHubs: Sending response: "+responseObject.toString());
+    log.logDebug("GetLastConfig: Sending response: " + responseObject.toString());
 
-         return Response.ok(responseObject.toString()).build();
-     }
+    return Response.ok(responseObject.toString()).build();
+  }
+
+  @GET
+  @Path("GetRegionsAreasHubs")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getRegionsAreasHubs() throws RemoteException, Exception {
+    CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, null, null, null, log, userName);
+    JSONObject responseObject = new JSONObject();
+    responseObject.put("data", rt.getRegionsAreasHubs());
+
+    log.logDebug("GetRegionsAreasHubs: Sending response: " + responseObject.toString());
+
+    return Response.ok(responseObject.toString()).build();
+  }
 
 
-    @GET
-    @Path("GetPOMDashboardRealtime")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getPOMDashboardRealtime(@QueryParam("region") String region,
+  @POST
+  @Path("GetPOMDashboardRealtime")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getPOMDashboardRealtime(@QueryParam("region") String region,
+                                          @QueryParam("area") String area,
+                                          @QueryParam("hub") String hub)
+    throws RemoteException, Exception {
+    CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, region, area, hub, log, userName);
+    JSONObject responseObject = new JSONObject();
+    responseObject.put("data", rt.getPOMDashboardRealtime());
+    log.logDebug("GetPOMDashboardRealtime: Sending response: " + responseObject.toString());
+    return Response.ok(responseObject.toString()).build();
+  }
+
+  @POST
+  @Path("GetPOMDashboardHistorical")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getPOMDashboardHistorical(@QueryParam("region") String region,
                                             @QueryParam("area") String area,
-                                            @QueryParam("hub") String hub)
-                                    throws RemoteException, Exception
-    {
-        CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, region, area, hub, log, userName);
-        JSONObject responseObject = new JSONObject();
-        responseObject.put("data", rt.getPOMDashboardRealtime());
+                                            @QueryParam("hub") String hub,
+                                            @QueryParam("startTime") String startTime,
+                                            @QueryParam("stopTime") String stopTime)
+    throws RemoteException, Exception {
+    CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, region, area, hub, log, userName);
+    JSONObject responseObject = new JSONObject();
+    responseObject.put("data", rt.getPOMDashboardHistorical(startTime, stopTime));
+    log.logDebug("GetPOMDashboardHistorical: Sending response: " + responseObject.toString());
+    return Response.ok(responseObject.toString()).build();
+  }
 
-        log.logDebug("GetPOMDashboardRealtime: Sending response: "+responseObject.toString());
+  @GET
+  @Path("GetPOMDrilldownDataLive")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getPOMDrilldownDataLive(@QueryParam("node") String node,
+                                          @QueryParam("severity") int severity)
+    throws RemoteException, Exception {
+    CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, node, null, null, log, userName);
+    JSONObject responseObject = new JSONObject();
+    responseObject.put("data", new JSONArray(rt.getPOMDrilldownDataLive(severity)));
+    log.logDebug("GetPOMDrilldownDataLive: Sending response: " + responseObject.toString());
+    return Response.ok(responseObject.toString()).build();
+  }
 
-        return Response.ok(responseObject.toString()).build();
-    }
+  @GET
+  @Path("GetPOMDrilldownDataHistorical")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getPOMDrilldownDataHistorical(@QueryParam("node") String node,
+                                                @QueryParam("startTime") String startTime,
+                                                @QueryParam("stopTime") String stopTime,
+                                                @QueryParam("severity") int severity)
 
-    @GET
-    @Path("GetPOMDashboardHistorical")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getPOMDashboardHistorical(@QueryParam("region") String region,
-                                              @QueryParam("area") String area,
-                                              @QueryParam("hub") String hub,
-                                              @QueryParam("startTime") String startTime,
-                                              @QueryParam("stopTime") String stopTime)
-                                    throws RemoteException, Exception
-    {
-        CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, region, area, hub, log, userName);
-        JSONObject responseObject = new JSONObject();
-        responseObject.put("data", rt.getPOMDashboardHistorical(startTime, stopTime));
-
-        log.logDebug("GetPOMDashboardHistorical: Sending response: "+responseObject.toString());
-
-        return Response.ok(responseObject.toString()).build();
-    }
-
-    @GET
-    @Path("GetPOMDrilldownDataLive")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getPOMDrilldownDataLive(@QueryParam("node") String node,
-                                        @QueryParam("severity") int severity)
-                                    throws RemoteException, Exception
-    {
-        CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, node, null, null, log, userName);
-        JSONObject responseObject = new JSONObject();
-
-        responseObject.put("data", new JSONArray(rt.getPOMDrilldownDataLive(severity)));
-        log.logDebug("GetPOMDrilldownDataLive: Sending response: "+ responseObject.toString());
-
-        return Response.ok(responseObject.toString()).build();
-    }
-
-    @GET
-    @Path("GetPOMDrilldownDataHistorical")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getPOMDrilldownDataHistorical(@QueryParam("node") String node,
-                                        @QueryParam("startTime") String startTime,
-                                        @QueryParam("stopTime") String stopTime,
-                                        @QueryParam("severity") int severity)
-
-                                    throws RemoteException, Exception
-    {
-        CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, node, null, null, log, userName);
-        JSONObject responseObject = new JSONObject();
-
-        responseObject.put("data", new JSONArray(rt.getPOMDrilldownDataHistorical(startTime, stopTime, severity)));
-        log.logDebug("GetPOMDrilldownDataHistorical: Sending response: "+responseObject.toString());
-
-        return Response.ok(responseObject.toString()).build();
-    }
+    throws RemoteException, Exception {
+    CTPOMDashboardUtils rt = new CTPOMDashboardUtils(CTMOConst.POM_TREE, node, null, null, log, userName);
+    JSONObject responseObject = new JSONObject();
+    responseObject.put("data", new JSONArray(rt.getPOMDrilldownDataHistorical(startTime, stopTime, severity)));
+    log.logDebug("GetPOMDrilldownDataHistorical: Sending response: " + responseObject.toString());
+    return Response.ok(responseObject.toString()).build();
+  }
 }
