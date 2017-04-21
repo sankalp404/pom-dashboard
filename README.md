@@ -6,6 +6,20 @@ These files are just for back-up purposes. These files are part of the new POM d
 The two .java files are just to give a reference to the business logic.
 They will not run/compile as they are part of a much bigger system.
 
+# Features
+* Ability to filter power supplies by region, area or hub.
+* Ability to view either real-time or historical data.
+* Historical view will have the capability to filter by date range.
+* Map power supplies onto map.
+* Cluster map capability which clusters map markers into their individual clusters based on the severity when zoomed out.
+* Distinct map markers for devices with no generators vs devices with generators attached. 
+* Real-time view also allows for "generators only" mapping.
+* Each filtered selection also shows the following:
+    * Outage chart for all the outages in the selection.
+    * Pie charts for individual area/hub containers in the selection.
+    * Ability to click on the chart to launch a more detailed data-table.
+    * Real-time view includes a run-time remaining chart for power supplies as well.
+
 Property of ALPHA TECHNOLOGIES
 
 ## Getting Started
