@@ -1,0 +1,66 @@
+#map-details {
+  height: 44em;
+  color: #000;
+}
+
+.errorCluster {
+    border-radius: 50%;
+    background-color: rgba(221, 221, 221,1);
+    text-align: center;
+    border:0.008em solid #ff0000;
+}
+
+.clusterLabel {
+  background-color: rgba(255, 255, 255, .9);
+  text-align: center;
+  font-weight: bold;
+  margin:auto;
+  margin-top: 42px;
+  border:0.008em solid #000000;
+  width: 28px;
+}
+
+.redCluster {
+    border-radius: 50%;
+    background-color: rgba(241, 3, 43, 0.8);
+    text-align: center;
+}
+
+.goldCluster {
+    border-radius: 50%;
+    background-color: rgba(252, 252, 51, 0.8);
+    text-align: center;
+}
+
+.greenCluster {
+    border-radius: 50%;
+    background-color: rgba(51, 151, 51, 0.8);
+    text-align: center;
+}
+
+.orangeCluster {
+    border-radius: 50%;
+    background-color: rgba(252, 181, 98, 0.8);
+    text-align: center;
+}
+
+/*experimental control where the label appears for each color*/
+/*
+div.redCluster > div.clusterLabel{
+  margin-top: -20px;
+}
+
+div.orangeCluster > div.clusterLabel{
+  margin-left: -20px;
+  margin-top: 12px;
+}
+
+div.greenCluster > div.clusterLabel{
+  margin-top: 42px;
+}
+
+div.goldCluster > div.clusterLabel{
+  margin-right: -20px;
+  margin-top: 12px;
+}
+*/

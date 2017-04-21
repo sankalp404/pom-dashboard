@@ -1,0 +1,23 @@
+.dark{
+  background: #3b3b3b;
+  color:#fff;
+}
+
+.control-panel{
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  background: transparent;
+}
+.card{
+  border: none;
+}
+.chart {
+  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 15em;
+  margin-top: 1em;
+}
+

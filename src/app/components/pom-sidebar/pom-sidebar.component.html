@@ -1,0 +1,5 @@
+<div id="sidebar">
+  <div *ngFor="let chart of charts">
+    <pom-sidebar-chart [chartData]="chart['values']" [chartTitle]="chart['name']"></pom-sidebar-chart>
+  </div>
+</div>

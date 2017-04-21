@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PomDashboard</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- pomdashboard.html is what is used to reference in CheetahXD. Not needed for local development(Can use index.html) -- Sankalp  -->
+
+  <script type="text/javascript" src="/webclient/pomdashboard/assets/vendor/leaflet/dist/leaflet.js"></script>
+  <script type="text/javascript"
+          src="/webclient/pomdashboard/assets/vendor/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+  <script type="text/javascript" src="/webclient/pomdashboard/assets/vendor/chart.js/dist/Chart.bundle.min.js"></script>
+
+  <!-- Mapquest must make the api request globally from the index. -->
+  <script src="https://open.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=1hjGtNbdNBnTBirgAfkBZAS5b2tgXGS6"></script>
+
+  <link href="/webclient/pomdashboard/styles.bundle.css" rel="stylesheet"/>
+</head>
+
+<body>
+<pom-dashboard>Loading POM Dashboard...</pom-dashboard>
+<script type="text/javascript" src="/webclient/pomdashboard/inline.bundle.js"></script>
+<script type="text/javascript" src="/webclient/pomdashboard/vendor.bundle.js"></script>
+<script type="text/javascript" src="/webclient/pomdashboard/main.bundle.js"></script>
+
+</body>
+</html>

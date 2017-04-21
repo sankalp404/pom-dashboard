@@ -1,0 +1,37 @@
+<form [formGroup]="filterSelectionForm">
+  <div class="elusive">
+    <div class="row card-block pt-2 pb-2">
+      <h4 class="card-title">{{regionTitle}}</h4>
+      <select #regionSelection class="form-control" id="region"
+              formControlName="region"
+              (change)="getAreaNames(regionSelection.value); onRegionChange(regionSelection.value)"
+              [value]="region">
+            <option value="">-- Please select --</option>
+            <option *ngFor="let item of getRegionNames()" value="{{item.value || item }}">{{item.name || item }}</option>
+      </select>
+    </div>
+
+    <div class="row card-block pt-2 pb-2">
+      <h4 class="card-title">{{areaTitle}}</h4>
+      <select #areaSelection class="form-control" id="area"
+              formControlName="area"
+              (change)="getHubNames(regionSelection.value, areaSelection.value); onAreaChange(areaSelection.value)"
+              [value]="area">
+            <option value="">-- Please select --</option>
+            <option *ngFor="let item of uiAreas" value="{{item.value || item }}">{{item.name || item }}</option>
+      </select>
+    </div>
+
+    <div class="row card-block pt-2 pb-2">
+      <h4 class="card-title">{{hubTitle}}</h4>
+      <select #hubSelection class="form-control" id="hub"
+              formControlName="hub"
+              (change)="onHubChange(hubSelection.value)"
+              [value]="hub">
+            <option value="">-- Please select --</option>
+            <option *ngFor="let item of uiHubs" value="{{item.value || item }}">{{item.name || item }}</option>
+      </select>
+    </div>
+  </div>
+</form>
+

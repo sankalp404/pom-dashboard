@@ -1,0 +1,27 @@
+<div class="card card-block pom-footer">
+  <div class="row">
+    <div class="col-4">
+      <pom-barchart-vertical class="card chart"
+                             [yAxisLabel]='"Power Outage Events"'
+                             [colors]="outageColors">
+
+      </pom-barchart-vertical>
+
+    </div>
+
+    <div class="col-4">
+      <pom-barchart-horizontal class="card chart"
+                               [xAxisLabel]='"Most Alarming Devices"'>
+
+      </pom-barchart-horizontal>
+    </div>
+
+    <div class="col-4">
+      <pom-barchart-vertical class="card chart"
+                             [yAxisLabel]='"Runtime Remaining"'
+                             [colors]="runTimeColors">
+
+      </pom-barchart-vertical>
+    </div>
+  </div>
+</div>

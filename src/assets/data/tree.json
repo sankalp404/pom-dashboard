@@ -1,0 +1,22 @@
+{
+	"data": {
+		"regions": [{
+				"regionName": "Pittsburgh",
+				"areas": [{
+						"areaName": "Ingram",
+						"hubs": ["Hillsboro"]
+					}, {
+						"areaName": "Mount Oliver",
+						"hubs": ["Mission"]
+					}, {
+						"areaName": "Downtown",
+						"hubs": ["Smallman", "Harmer", "Golden Triangle"]
+					}, {
+						"areaName": "Green Tree",
+						"hubs": ["Fleet", "Mansfield"]
+					}
+				]
+			}
+		]
+	}
+}

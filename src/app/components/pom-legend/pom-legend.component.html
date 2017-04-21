@@ -1,0 +1,5 @@
+<ul class="key">
+  <li *ngFor="let item of colorLabelPairs">
+    <div class="marker" [ngStyle]="{'background-color': item.color}"></div>{{item.label}}
+  </li>
+</ul>

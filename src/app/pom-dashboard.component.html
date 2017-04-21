@@ -1,0 +1,100 @@
+<section class="container-fluid dark">
+  <div class="row">
+    <br><br><br><br><br>
+  </div>
+  <div class="row">
+    <div class="col-sm-10">
+
+      <div class="row">
+
+        <div class="col-sm-3">
+
+          <div>
+            <!--todo: this could be made into a component container with a nav-->
+            <ul class="nav nav-tabs nav-fill">
+              <li class="nav-item">
+                <a class="nav-link" [ngClass]="{ 'active' : isLiveView }" href="javascript:void(0)"
+                   (click)="switchToCurrent()">Live Data</a>
+              </li>
+              <li nav-item>
+                <a class="nav-link" [ngClass]="{ 'active' : !isLiveView }" href="javascript:void(0)"
+                   (click)="switchToHistoric()">Historic Data</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="treeFilter" class="control-panel">
+            <pom-filter-panel [region]="loadedData.filters.region"
+                              [area]="loadedData.filters.area"
+                              [hub]="loadedData.filters.hub"
+                              (regionChanged)="updateRegion($event)"
+                              (areaChanged)="updateArea($event)"
+                              (hubChanged)="updateHub($event)"></pom-filter-panel>
+
+            <date-picker *ngIf="!isLiveView" #date
+                         [startDate]="loadedData.startDate"
+                         [endDate]="loadedData.endDate">
+            </date-picker>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="mapGeneratorsOnly" [(ngModel)]="generatorCheck"> Map Generators Only
+              </label>
+            </div>
+
+          </div>
+
+          <div class="float-right pt-2">
+            <button (click)="debug()" class="btn btn-danger btn-sm">Debug</button>
+            <button id="pomClearBtn" (click)="clearData();clustermap.clearMap()" class="btn btn-default btn-sm">Clear</button>
+            <button id="pomMapBtn" (click)="getData()" class="btn btn-primary btn-sm">{{isLiveView ? 'Map Live':'Map Historic'}}</button>
+          </div>
+
+        </div>
+
+        <div id="clusterMap" class="col-sm-9">
+          <pom-cluster-map #clustermap
+                           [latitude]="baseLatitude"
+                           [longitude]="baseLongitude"
+                           [devices]="devices"
+                           [generatorsOnly]="generatorCheck">
+          </pom-cluster-map>
+        </div>
+
+        <div id="outageChart" class="col-sm-3 ">
+          <pom-barchart-vertical *ngIf="outageData" class="card chart"
+                                 [data]="outageData"
+                                 [showXAxis]="false"
+                                 [showYAxis]="true"
+                                 [yAxisLabel]='"Power Outage Events"'
+                                 [colors]="outageColors">
+
+          </pom-barchart-vertical>
+        </div>
+        <div id="runtimeRemainingChart" class="col-sm-7">
+          <pom-barchart-vertical *ngIf="runtimeRemainingData" class="card chart"
+                                 [data]="runtimeRemainingData"
+                                 [showXAxis]="true"
+                                 [showYAxis]="false"
+                                 [xAxisLabel]='"Runtime Remaining"'
+                                 [colors]="runTimeColors">
+
+          </pom-barchart-vertical>
+        </div>
+        <div id="pomLegend" class="col-sm-2">
+          <pom-legend *ngIf="outageData" [colorLabelPairs]="legendDefinitions"></pom-legend>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- chart sidebar -->
+    <div class="col-sm-2">
+      <pom-sidebar [charts]="pie_charts"></pom-sidebar>
+    </div>
+
+  </div>
+</section>
+
+
+

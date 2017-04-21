@@ -1,0 +1,13 @@
+.pom-footer {
+  margin-top: 1em;
+  background: transparent;
+}
+
+.chart {
+  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 15em;
+}

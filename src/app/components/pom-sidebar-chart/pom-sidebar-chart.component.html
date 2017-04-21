@@ -1,0 +1,12 @@
+<div class="card-block">
+  <canvas baseChart
+          [data]="chartData"
+          [labels]="chartLabels"
+          [chartType]="chartType"
+          [colors]="chartColors"
+          [legend]="chartLegend"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+  <h6 class="text-center">{{ chartTitle }}</h6>
+</div>
+

@@ -1,0 +1,769 @@
+{
+  "data": [
+    { "id": "mkdm3ps",
+      "latitude": 40.4498,
+      "longitude": -80.06287,
+      "name": "Mckees Rocks DM3 PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 100,
+        "severity": 2,
+        "has_generator": true,
+        "prev_outage_count": 2,
+        "area": "Ingram",
+        "hub": "Hillsboro"
+      }
+    },
+    { "id": "ssxm3ps",
+      "latitude": 40.42276,
+      "longitude": -79.97068,
+      "name": "South Side XM3 PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 18,
+        "severity": 4,
+        "has_generator": false,
+        "prev_outage_count": 5,
+        "area": "Mount Oliver",
+        "hub": "Mission"
+      }
+    },
+    { "id": "bdm3ps1",
+      "latitude": 40.45803,
+      "longitude": -79.96811,
+      "name": "Bigelow DM3 PS : String 1",
+      "params": {
+        "standby": true,
+        "est_runtime": 168,
+        "severity": 2,
+        "has_generator": true,
+        "prev_outage_count": 2,
+        "area": "Downtown",
+        "hub": "Harmer"
+      }
+    },
+    { "id": "bdm3ps2",
+      "latitude": 40.45751,
+      "longitude": -79.96906,
+      "name": "Bigelow DM3 PS : String 2",
+      "params": {
+        "standby": true,
+        "est_runtime": 15,
+        "severity": 2,
+        "has_generator": false,
+        "prev_outage_count": 8,
+        "area": "Downtown",
+        "hub": "Harmer"
+      }
+    },
+    { "id": "pxmeps",
+      "latitude": 40.45976,
+      "longitude": -79.97132,
+      "name": "Penn XM3 PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 50,
+        "severity": 1,
+        "has_generator": false,
+        "prev_outage_count": 5,
+        "area": "Downtown",
+        "hub": "Smallman"
+      }
+    },
+    { "id": "pxmeps",
+      "latitude": 40.4575028,
+      "longitude": -79.9776675,
+      "name": "Pitt Ohio PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 50,
+        "severity": 1,
+        "has_generator": false,
+        "prev_outage_count": 5,
+        "area": "Downtown",
+        "hub": "Smallman"
+      }
+    },
+    { "id": "wgs2ps",
+      "latitude": 40.44001,
+      "longitude": -80.0009,
+      "name": "Wood GS2-PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 150,
+        "severity": 3,
+        "has_generator": true,
+        "prev_outage_count": 1,
+        "area": "Downtown",
+        "hub": "Golden Triangle"
+      }
+    },
+    { "id": "msps",
+      "latitude": 40.4406564,
+      "longitude": -80.0024441,
+      "name": "Market Square PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 150,
+        "severity": 3,
+        "has_generator": true,
+        "prev_outage_count": 1,
+        "area": "Downtown",
+        "hub": "Golden Triangle"
+      }
+    },
+    { "id": "sgs2ps",
+      "latitude": 40.44041,
+      "longitude": -80.00416,
+      "name": "Stanwix GS2-PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 36,
+        "severity": 2,
+        "has_generator": false,
+        "prev_outage_count": 15,
+        "area": "Downtown",
+        "hub": "Golden Triangle"
+      }
+    },
+    { "id": "ogs2ps",
+      "latitude": 40.44085,
+      "longitude": -79.99842,
+      "name": "Oliver GS2-PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 98,
+        "severity": 2,
+        "has_generator": true,
+        "prev_outage_count": 1,
+        "area": "Downtown",
+        "hub": "Golden Triangle"
+      }
+    },
+    { "id": "fgs2ps",
+      "latitude": 40.43911,
+      "longitude": -79.99832,
+      "name": "Forbes GS2-PS",
+      "params": {
+        "standby": true,
+        "est_runtime": 72,
+        "severity": 2,
+        "has_generator": false,
+        "prev_outage_count": 12,
+        "area": "Downtown",
+        "hub": "Golden Triangle"
+      }
+    },
+    { "id": "aidh4x1",
+      "latitude": 40.41996,
+      "longitude": -80.05332,
+      "name": "Alpha IDH4X : String 1",
+      "params": {
+        "standby": true,
+        "est_runtime": 115,
+        "severity": 4,
+        "has_generator": true,
+        "prev_outage_count": 2,
+        "area": "Green Tree",
+        "hub": "Mansfield"
+      }
+    },
+    { "id": "aidh4x2",
+      "latitude": 40.41977,
+      "longitude": -80.05272,
+      "name": "Alpha IDH4X : String 2",
+      "params": {
+        "standby": true,
+        "est_runtime": 112,
+        "severity": 2,
+        "has_generator": true,
+        "prev_outage_count": 1,
+        "area": "Green Tree",
+        "hub": "Mansfield"
+      }
+    },
+    { "id": "aapsx",
+      "latitude": 40.42112,
+      "longitude": -80.0516,
+      "name": "Alpha ApsX",
+      "params": {
+        "standby": true,
+        "est_runtime": 233,
+        "severity": 2,
+        "has_generator": true,
+        "prev_outage_count": 0,
+        "area": "Green Tree",
+        "hub": "Fleet"
+      }
+    }
+  ],
+  "charts": [
+    { "id": "mkdm3ps",
+      "chartData": [300,100,50,10],
+      "title": "Mckees Rocks DM3 PS",
+      "area": "Ingram",
+      "hub": "Hillsboro"
+    },
+    { "id": "ssxm3ps",
+      "chartData": [23,16,12,7],
+      "title": "South Side XM3 PS",
+      "area": "Mount Oliver",
+      "hub": "Mission"
+    },
+    { "id": "bdm3ps1",
+      "chartData": [14,19,15,10],
+      "title": "Bigelow DM3 PS : String 1",
+      "area": "Downtown",
+      "hub": "Harmer"
+    },
+    { "id": "bdm3ps2",
+      "chartData": [4,0,5,0],
+      "title": "Bigelow DM3 PS : String 2",
+      "area": "Downtown",
+      "hub": "Harmer"
+    },
+    { "id": "pxmeps",
+      "chartData": [3,0,0,1],
+      "title": "Penn XM3 PS",
+      "area": "Downtown",
+      "hub": "Smallman"
+    },
+    { "id": "wgs2ps",
+      "chartData": [16,10,5,9],
+      "title": "Wood GS2-PS",
+      "area": "Downtown",
+      "hub": "Golden Triangle"
+    },
+    { "id": "sgs2ps",
+      "chartData": [3,1,5,1],
+      "title": "Stanwix GS2-PS",
+      "area": "Downtown",
+      "hub": "Golden Triangle"
+    },
+    { "id": "ogs2ps",
+      "chartData": [80,100,90,30],
+      "title": "Oliver GS2-PS",
+      "area": "Downtown",
+      "hub": "Golden Triangle"
+    },
+    { "id": "fgs2ps",
+      "chartData": [3,6,5,1],
+      "title": "Forbes GS2-PS",
+      "prev_outage_count": 12,
+      "area": "Downtown",
+      "hub": "Golden Triangle"
+    },
+    { "id": "aidh4x1",
+      "chartData": [0,0,10,8],
+      "title": "Alpha IDH4X : String 1",
+      "area": "Green Tree",
+      "hub": "Mansfield"
+    },
+    { "id": "aidh4x2",
+      "chartData": [31,4,50,10],
+      "title": "Alpha IDH4X : String 2",
+      "area": "Green Tree",
+      "hub": "Mansfield"
+    },
+    { "id": "aapsx",
+      "chartData": [13,0,5,10],
+      "title": "Alpha ApsX",
+      "area": "Green Tree",
+      "hub": "Fleet"
+    }
+  ],
+  "barCharts": [
+    { "id": "Fleet",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 104
+        },
+        {
+          "name": "Outages",
+          "value": 52
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 92
+        },
+       {
+          "name": "Failed",
+          "value": 70
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 104
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 52
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 92
+        },
+       {
+          "name": "< 1 hour",
+          "value": 70
+        }
+      ]
+    },
+    { "id": "Mansfield",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 22
+        },
+        {
+          "name": "Outages",
+          "value": 23
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 27
+        },
+       {
+          "name": "Failed",
+          "value": 12
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 32
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 52
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 92
+        },
+       {
+          "name": "< 1 hour",
+          "value": 72
+        }
+      ]
+    },
+    { "id": "Green Tree",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 914
+        },
+        {
+          "name": "Outages",
+          "value": 500
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 720
+        },
+       {
+          "name": "Failed",
+          "value": 200
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 34
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 52
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 62
+        },
+       {
+          "name": "< 1 hour",
+          "value": 70
+        }
+      ]
+    },
+    { "id": "Golden Triangle",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 4
+        },
+        {
+          "name": "Outages",
+          "value": 5
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 7
+        },
+       {
+          "name": "Failed",
+          "value": 13
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 4
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 5
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 7
+        },
+       {
+          "name": "< 1 hour",
+          "value": 8
+        }
+      ]
+    },
+    { "id": "Smallman",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 2
+        },
+        {
+          "name": "Outages",
+          "value": 5
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 7
+        },
+       {
+          "name": "Failed",
+          "value": 8
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 41
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 52
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 42
+        },
+       {
+          "name": "< 1 hour",
+          "value": 89
+        }
+      ]
+    },
+    { "id": "Hillsboro",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 914
+        },
+        {
+          "name": "Outages",
+          "value": 501
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 712
+        },
+       {
+          "name": "Failed",
+          "value": 210
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 104
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 28
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 23
+        },
+       {
+          "name": "< 1 hour",
+          "value": 17
+        }
+      ]
+    },
+    { "id": "Harmer",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 9
+        },
+        {
+          "name": "Outages",
+          "value": 10
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 12
+        },
+       {
+          "name": "Failed",
+          "value": 20
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 11
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 12
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 19
+        },
+       {
+          "name": "< 1 hour",
+          "value": 20
+        }
+      ]
+    },
+    { "id": "Mount Oliver",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 4
+        },
+        {
+          "name": "Outages",
+          "value": 0
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 2
+        },
+       {
+          "name": "Failed",
+          "value": 0
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 41
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 52
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 62
+        },
+       {
+          "name": "< 1 hour",
+          "value": 70
+        }
+      ]
+    },
+    { "id": "Mission",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 0
+        },
+        {
+          "name": "Outages",
+          "value": 0
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 72
+        },
+       {
+          "name": "Failed",
+          "value": 20
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 1
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 2
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 9
+        },
+       {
+          "name": "< 1 hour",
+          "value": 17
+        }
+      ]
+    },
+    { "id": "Ingram",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 194
+        },
+        {
+          "name": "Outages",
+          "value": 50
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 72
+        },
+       {
+          "name": "Failed",
+          "value": 200
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 14
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 12
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 12
+        },
+       {
+          "name": "< 1 hour",
+          "value": 7
+        }
+      ]
+    },
+    { "id": "Downtown",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 9
+        },
+        {
+          "name": "Outages",
+          "value": 5
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 12
+        },
+       {
+          "name": "Failed",
+          "value": 20
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 104
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 52
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 92
+        },
+       {
+          "name": "< 1 hour",
+          "value": 70
+        }
+      ]
+    },
+    { "id": "Pittsburgh",
+      "barChart1": [
+        {
+          "name": "No outages",
+          "value": 9
+        },
+        {
+          "name": "Outages",
+          "value": 5
+        },
+        {
+          "name": "Outages with loss of communication",
+          "value": 7
+        },
+       {
+          "name": "Failed",
+          "value": 2
+        }
+      ],
+      "barChart2": {
+        "series": [300,100,50,10]
+      },
+      "barChart3": [
+        {
+          "name": "> 5 hrs",
+          "value": 10
+        },
+        {
+          "name": "3 - 5 hrs",
+          "value": 5
+        },
+        {
+          "name": "1 - 3 hrs",
+          "value": 2
+        },
+       {
+          "name": "< 1 hour",
+          "value": 7
+        }
+      ]
+    }
+    ]
+}

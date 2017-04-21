@@ -1,0 +1,13 @@
+ul.key {
+  margin-top: 1em;
+  list-style: none;
+  font-size: small;
+  padding: 0px;
+}
+
+div.marker{
+  display: inline-block;
+  width:1.25em;
+  height: 1.25em;
+  margin-right: .5em;
+}
