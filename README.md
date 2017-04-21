@@ -11,7 +11,7 @@ They will not run/compile as they are part of a much bigger system.
 * Ability to view either real-time or historical data.
 * Historical view will have the capability to filter by date range.
 * Map power supplies onto map.
-* Cluster map capability which clusters map markers into their individual clusters based on the severity when zoomed out.
+* Cluster map capability which clusters map markers into their individual "severity-based"clusters when zoomed out.
 * Distinct map markers for devices with no generators vs devices with generators attached. 
 * Real-time view also allows for "generators only" mapping.
 * Each filtered selection also shows the following:
