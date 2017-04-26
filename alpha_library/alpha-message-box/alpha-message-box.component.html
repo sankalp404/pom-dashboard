@@ -1,0 +1,15 @@
+<div class="message-container" [ngStyle]="{'height': scrollMinHeight }">
+  <ul>
+    <ng-container *ngIf="messages">
+      <li  *ngFor="let message of messages" class="general" >{{message}}</li>
+    </ng-container>
+
+    <ng-container *ngIf="warnings">
+      <li class="warning" *ngFor="let warning of warnings">{{warning}}</li>
+    </ng-container>
+
+    <ng-container *ngIf="errors" >
+      <li class="error" *ngFor="let error of errors">{{error}}</li>
+    </ng-container>
+  </ul>
+</div>

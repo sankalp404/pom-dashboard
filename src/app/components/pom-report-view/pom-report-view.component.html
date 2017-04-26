@@ -1,0 +1,10 @@
+<section class="container-fluid">
+  <h2 *ngIf="!isHistoric"> POM Event Details</h2>
+  <h2 *ngIf="isHistoric"> POM Event Details</h2>
+
+  <alpha-table-basic
+    [columnHeaders]="headers"
+    [rowNames]="rowNames"
+    [rows]="data">
+  </alpha-table-basic>
+</section>

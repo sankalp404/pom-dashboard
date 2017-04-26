@@ -1,0 +1,16 @@
+<table *ngIf="!invalidError">
+  <thead>
+    <th *ngFor="let header of columnHeaders">
+      {{header}}
+    </th>
+  </thead>
+  <tfoot *ngIf="footer"><td colspan="100%">{{footer}}</td></tfoot>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let param of rowNames">{{row[param | lowercase]}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="error" *ngIf="invalidError">
+  <strong>{{this.errorMessage.error}}:</strong> {{this.errorMessage.text}}
+</div>

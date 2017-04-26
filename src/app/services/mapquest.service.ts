@@ -2,7 +2,6 @@
  * This service uses MapQuest API
  * Requires global access to the leaflet library and global access to the
  * MapQuest api url/key. This can be achieved by adding script links to index.html
- *
  */
 import {Injectable} from '@angular/core';
 import {Map as lMap} from 'leaflet';

@@ -3,17 +3,22 @@
     <h5 class="card-title">Start Date</h5>
     <div class="input-group">
       <input id="startDate" class="form-control" placeholder="yyyy-mm-dd"
-             name="startDate" [(ngModel)]="startDate" ngbDatepicker #start="ngbDatepicker">
+             [maxDate]="endDate"
+             (ngModelChange)="startDateChanged($event)"
+             name="startDate" [ngModel]="startDate" ngbDatepicker #start="ngbDatepicker">
       <div class="input-group-addon" (click)="start.toggle()" >
-        <img src="/webclient/angular/dist/assets/images/calendar.svg" class="calenderIcon"/>
+        <img src="/webclient/pomdashboard/assets/images/calendar.svg" class="calenderIcon"/>
       </div>
     </div>
     <h5 class="card-title">End Date</h5>
     <div class="input-group">
       <input id="endDate" class="form-control" placeholder="yyyy-mm-dd"
-             name="endDate" [(ngModel)]="endDate" ngbDatepicker #end="ngbDatepicker">
+             [minDate]="startDate"
+             [maxDate]="yesterday"
+             (ngModelChange)="endDateChanged($event)"
+             name="endDate" [ngModel]="endDate" ngbDatepicker #end="ngbDatepicker">
       <div class="input-group-addon" (click)="end.toggle()">
-        <img src="/webclient/angular/dist/assets/images/calendar.svg" class="calenderIcon"/>
+        <img src="/webclient/pomdashboard/assets/images/calendar.svg" class="calenderIcon"/>
       </div>
     </div>
   </div>

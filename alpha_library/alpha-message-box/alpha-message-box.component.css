@@ -1,0 +1,20 @@
+.message-container {
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li.warning:before {
+  content: "\2753 \0020";
+  color: #3476ff;
+}
+
+li.error:before {
+  content: "\2757 \0020";
+  color: #FF0000;
+}

@@ -1,7 +1,3 @@
-/**
- * Created by Sankalp Sharma on 2/11/2017.
- */
-
 import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
@@ -13,6 +9,9 @@ import {Component, OnInit, Input} from '@angular/core';
 export class PomSidebarComponent implements OnInit {
 
   @Input() charts:any[];
+  @Input() isLive:boolean;
+  @Input() startDate:any;
+  @Input() endDate:any;
 
   constructor() {
 

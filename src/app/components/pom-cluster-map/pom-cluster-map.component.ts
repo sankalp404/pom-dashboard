@@ -1,6 +1,3 @@
-/**
- * Created by Sankalp Sharma on 1/19/2017.
- */
 import {Component, OnInit, OnChanges, Input, SimpleChanges} from '@angular/core';
 import {ViewEncapsulation} from '@angular/core';
 import {Map as lMap} from 'leaflet';

@@ -1,3 +1,6 @@
+/**
+ * Created by Sankalp Sharma on 1/19/2017.
+ */
 export class Params {
   standby: boolean;
   est_runtime: number;

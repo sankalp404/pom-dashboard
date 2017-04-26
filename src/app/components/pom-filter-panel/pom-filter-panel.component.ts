@@ -1,6 +1,3 @@
-/**
- * Created by Sankalp Sharma on 2/6/2017.
- */
 import {Component, OnInit, Input, Inject, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
 import {TreeFilterService} from "../../services/tree-filter.service";
 import {FormGroup, FormBuilder} from "@angular/forms";

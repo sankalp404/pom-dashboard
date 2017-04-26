@@ -1,8 +1,5 @@
 <section class="container-fluid dark">
   <div class="row">
-    <br><br><br><br><br>
-  </div>
-  <div class="row">
     <div class="col-sm-10">
 
       <div class="row">
@@ -33,10 +30,12 @@
 
             <date-picker *ngIf="!isLiveView" #date
                          [startDate]="loadedData.startDate"
-                         [endDate]="loadedData.endDate">
+                         [endDate]="loadedData.endDate"
+                         (startChanged)="updateStartDate($event)"
+                         (endChanged)="updateEndDate($event)">
             </date-picker>
 
-            <div class="checkbox">
+            <div *ngIf="isLiveView" class="checkbox">
               <label>
                 <input type="checkbox" id="mapGeneratorsOnly" [(ngModel)]="generatorCheck"> Map Generators Only
               </label>
@@ -46,8 +45,17 @@
 
           <div class="float-right pt-2">
             <button (click)="debug()" class="btn btn-danger btn-sm">Debug</button>
-            <button id="pomClearBtn" (click)="clearData();clustermap.clearMap()" class="btn btn-default btn-sm">Clear</button>
+            <button id="pomClearBtn" (click)="clearData();clustermap.clearMap()" class="btn btn-default btn-sm">Clear Map</button>
             <button id="pomMapBtn" (click)="getData()" class="btn btn-primary btn-sm">{{isLiveView ? 'Map Live':'Map Historic'}}</button>
+          </div>
+
+          <div class="float-left pt-2">
+            <alpha-message-box
+              id="pom-message-box"
+              [messages]="displayMessages.messages"
+              [errors]="displayMessages.errors"
+              [warnings]="displayMessages.warnings">
+            </alpha-message-box>
           </div>
 
         </div>
@@ -59,6 +67,15 @@
                            [devices]="devices"
                            [generatorsOnly]="generatorCheck">
           </pom-cluster-map>
+
+          <!-- Date data messages -->
+          <p class="mapMessage" *ngIf="isLiveView && devices.length > 0">Outages of {{today | date: 'shortDate'}}</p>
+          <p class="mapMessage" *ngIf="!isLiveView && devices.length > 0">
+            Outages between
+            {{loadedData.startDate.month | number:'2.0'}}/{{loadedData.startDate.day}}/{{loadedData.startDate.year}}
+            and {{loadedData.endDate.month | number:'2.0'}}/{{loadedData.endDate.day}}/{{loadedData.endDate.year}}
+          </p>
+
         </div>
 
         <div id="outageChart" class="col-sm-3 ">
@@ -67,7 +84,12 @@
                                  [showXAxis]="false"
                                  [showYAxis]="true"
                                  [yAxisLabel]='"Power Outage Events"'
-                                 [colors]="outageColors">
+                                 [isLiveView]="isLiveView"
+                                 [region]="loadedData.filters.region"
+                                 [area]="loadedData.filters.area"
+                                 [hub]="loadedData.filters.hub"
+                                 [startDate]="loadedData.startDate"
+                                 [endDate]="loadedData.endDate">
 
           </pom-barchart-vertical>
         </div>
@@ -90,11 +112,15 @@
 
     <!-- chart sidebar -->
     <div class="col-sm-2">
-      <pom-sidebar [charts]="pie_charts"></pom-sidebar>
+      <pom-sidebar
+        [charts]="pie_charts"
+        [isLive]="isLiveView"
+        [startDate]="loadedData.startDate"
+        [endDate]="loadedData.endDate"
+      ></pom-sidebar>
     </div>
 
   </div>
 </section>
 
-
-
+<!--<button (click)="openNewTab()">Open new tab</button>-->

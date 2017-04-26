@@ -1,0 +1,33 @@
+{
+	"data": [{
+			"gen_status": "Running",
+			"gen_output_volts": 85,
+			"gen_stopTime": 0,
+			"gen_string_volts": 0,
+			"temperature": 23,
+			"mac_address": "00 90 ea 11 d3 44",
+			"gen_output_current": 1.4,
+			"ip_address": "172.16.3.63",
+			"gen_attached": true,
+			"gen_startTime": 0,
+			"gen_input_volts": -9999,
+			"gen_elapsed_runtime": 359999,
+			"display_name": "DOCSIS 0090ea11d344"
+		}, {
+			"gen_status": "Not Available",
+			"location": "555 Trumbull Dr, Pittsburgh, PA 15205 (40.4193,-80.0538)",
+			"gen_output_volts": 88,
+			"gen_stopTime": 0,
+			"gen_string_volts": 0,
+			"temperature": 22,
+			"mac_address": "00 90 ea 18 6b 08",
+			"gen_output_current": 0,
+			"ip_address": "172.16.3.51",
+			"gen_attached": true,
+			"gen_startTime": 0,
+			"gen_input_volts": 0,
+			"gen_elapsed_runtime": 0,
+			"display_name": "DOCSIS 0090ea186b08"
+		}
+	]
+}

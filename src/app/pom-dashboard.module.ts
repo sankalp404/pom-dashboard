@@ -1,5 +1,5 @@
 /**
- * Created by Sankalp Sharma on 4/6/2017.
+ * Created by sharmasx on 4/6/2017.
  */
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
@@ -9,6 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {ChartsModule} from "ng2-charts";
 
+import {AlphaGeneralGUIModule} from './../../alpha_library/alpha-general-gui.module';
 import {PomDashboardComponent} from './pom-dashboard.component';
 import {PomClusterMapComponent} from './components/pom-cluster-map/pom-cluster-map.component';
 import {DatePickerComponent} from './components/pom-date-picker/pom-date-picker.component';
@@ -24,6 +25,7 @@ import {PomGeneratorAttachedPipe} from "./shared/pipes/pom-generator-attached.pi
 
 import {MapDataService} from "./services/map-data.service";
 import {TreeFilterService} from "./services/tree-filter.service";
+import {PomDashboardRoutingModule, routedComponents} from "./pom-dashboard-routing.module";
 
 
 
@@ -38,7 +40,8 @@ import {TreeFilterService} from "./services/tree-filter.service";
     PomFooterComponent,
     PomBarchartVerticalComponent,
     PomBarchartHorizontalComponent,
-    PomLegendComponent
+    PomLegendComponent,
+    routedComponents,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,9 @@ import {TreeFilterService} from "./services/tree-filter.service";
     HttpModule,
     NgbModule.forRoot(),
     NgxChartsModule,
-    ChartsModule
+    ChartsModule,
+    AlphaGeneralGUIModule,
+    PomDashboardRoutingModule
   ],
   providers: [MapDataService, TreeFilterService, PomGeneratorAttachedPipe],
   bootstrap: [PomDashboardComponent]

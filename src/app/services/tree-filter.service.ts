@@ -41,29 +41,4 @@ export class TreeFilterService {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
-
-  // getRegions():string[]{
-  //   return  _.map(this.dataStore, 'regionName');
-  // }
-  //
-  // getAreas(region:string):string[]{
-  //   let results = _.find(this.dataStore, { 'regionName': region });
-  //   return _.map(results.areas, 'areaName');
-  // }
-  //
-  // getHubs(region:string, area:string):string[] {
-  //   let foundRegion = _.find(this.dataStore, { 'regionName': region });
-  //   let foundArea = _.find(foundRegion.areas, {'areaName': area });
-  //
-  //   return foundArea['hubs'];
-  // }
-  //
-  // loadData(){
-  //   this.http.get(this.treeUrl)
-  //     .map((response:Response)=> response.json())
-  //     .subscribe(res => {
-  //       this.dataStore = res.data['regions'];
-  //
-  //     }, error => console.error('Unable to load the drop-down menu data for Region, Area, and Hub '));
-  // }
 }

@@ -1,6 +1,3 @@
-/**
- * Created by Sankalp Sharma on 2/11/2017.
- */
 import {Component, OnInit} from '@angular/core';
 
 @Component({
